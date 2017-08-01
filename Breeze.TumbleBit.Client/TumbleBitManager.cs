@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using NBitcoin;
 using NTumbleBit.ClassicTumbler;
+using NTumbleBit.ClassicTumbler.Client;
 using Stratis.Bitcoin.Features.Wallet;
 using Stratis.Bitcoin.Features.WatchOnlyWallet;
 using Stratis.Bitcoin.Signals;
@@ -47,7 +48,10 @@ namespace Breeze.TumbleBit.Client
             // of the TumblebitRuntime. This method can then be modified to potentially be a convenience method 
             // where a user wants to check a tumbler's paramters before commiting to tumbling (and therefore before configuring the runtime).
             this.tumblerService = new TumblerService(serverAddress);
-            this.TumblerParameters = await this.tumblerService.GetClassicTumblerParametersAsync();
+
+            TumblerClient client = new TumblerClient(this.network, new TumblerUrlBuilder(serverAddress.ToString()), 0);
+            this.TumblerParameters = await client.GetTumblerParametersAsync();
+            //this.TumblerParameters = await this.tumblerService.GetClassicTumblerParametersAsync();
 
             if (this.TumblerParameters.Network != this.network)
             {

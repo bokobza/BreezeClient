@@ -4,11 +4,18 @@ using NTumbleBit.Logging;
 using Stratis.Bitcoin;
 using Stratis.Bitcoin.Builder;
 using Stratis.Bitcoin.Configuration;
+using Breeze.Wallet;
+using Stratis.Bitcoin.Features.Notifications;
+using Stratis.Bitcoin.Features.WatchOnlyWallet;
+using Breeze.Api;
+using Stratis.Bitcoin.Utilities;
 
 namespace Breeze.TumbleBit.Client.CLI
 {
     class Program
     {
+        private const string DefaultBitcoinUri = "http://localhost:5766";
+
         static void Main(string[] args)
         {
 	        FuncLoggerFactory loggerFactory =
@@ -26,8 +33,9 @@ namespace Breeze.TumbleBit.Client.CLI
 
 			//Start the engines!
 			NodeSettings nodeSettings = NodeSettings.FromArguments(args);
-			FullNode fullNode = StartupFullNode(nodeSettings, tumblerUri);
-
+            nodeSettings.ApiUri = new Uri(DefaultBitcoinUri);
+            FullNode fullNode = StartupFullNode(nodeSettings, tumblerUri);
+            fullNode.Run();
 			ITumbleBitManager tumbleBitManager;// = new TumbleBitManager(loggerFactory, );
 
 			//use the tumblebitManager with a wait
@@ -39,18 +47,18 @@ namespace Breeze.TumbleBit.Client.CLI
 
 	    private static FullNode StartupFullNode(NodeSettings nodeSettings, Uri tumblerUri)
 	    {
-		    //var fullNodeBuilder = new FullNodeBuilder()
-			   // .UseNodeSettings(nodeSettings)
-			   // .UseLightWallet()
-			   // .UseBlockNotification()
-			   // .UseTransactionNotification()
-			   // .UseApi()
-			   // .UseTumbleBit(tumblerUri)
-			   // .UseWatchOnlyWallet()
-			   // .Build();
+            var fullNodeBuilder = new FullNodeBuilder()
+                .UseNodeSettings(nodeSettings)
+                .UseLightWallet()
+                .UseBlockNotification()
+                .UseTransactionNotification()                
+                .UseTumbleBit(tumblerUri)
+                .UseWatchOnlyWallet()
+                .UseApi()
+                .Build();
 
-		    //return fullNodeBuilder;
-		    return null;
+            return fullNodeBuilder as FullNode;
+            
 	    }
     }
 }

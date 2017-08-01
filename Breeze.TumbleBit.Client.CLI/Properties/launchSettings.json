@@ -2,7 +2,7 @@
   "profiles": {
     "Breeze.TumbleBit.Client.CLI": {
       "commandName": "Project",
-      "commandLineArgs": "-ctb xxxx -origin yyyy -destination xxxx"
+      "commandLineArgs": "-ctb ctb://liqz66qhn4moh73a.onion?h=b30367b7e65f54e7d3ed2e63603f60f48ec7f35d -origin yyyy -destination xxxx -testnet"
     }
   }
 }

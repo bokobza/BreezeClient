@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Breeze.TumbleBit.Client", "Breeze.TumbleBit.Client\Breeze.TumbleBit.Client.csproj", "{0F136FAA-8892-4859-AAF6-48FE0A56E124}"
 EndProject
@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NBitcoin", "StratisBitcoinF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashLib", "StratisBitcoinFullNode\NStratis\Hashing\HashLib\HashLib.csproj", "{BBC6BDA6-F6EF-444B-86CF-5797E53BA20D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breeze.TumbleBit.Client.CLI", "Breeze.TumbleBit.Client.CLI\Breeze.TumbleBit.Client.CLI.csproj", "{D5EC2C2A-051B-4C5D-BA37-3A2FA4E02E1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Breeze.TumbleBit.Client.CLI", "Breeze.TumbleBit.Client.CLI\Breeze.TumbleBit.Client.CLI.csproj", "{D5EC2C2A-051B-4C5D-BA37-3A2FA4E02E1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Breeze.Wallet", "..\Breeze\Breeze\src\Breeze.Wallet\Breeze.Wallet.csproj", "{0A7DFE64-89F2-41C5-A197-0A79325B1D46}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Breeze.Api", "..\Breeze\Breeze\src\Breeze.Api\Breeze.Api.csproj", "{0D32EAA9-A1AD-4399-BA9D-06366D067F41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{D5EC2C2A-051B-4C5D-BA37-3A2FA4E02E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5EC2C2A-051B-4C5D-BA37-3A2FA4E02E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5EC2C2A-051B-4C5D-BA37-3A2FA4E02E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A7DFE64-89F2-41C5-A197-0A79325B1D46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7DFE64-89F2-41C5-A197-0A79325B1D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7DFE64-89F2-41C5-A197-0A79325B1D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A7DFE64-89F2-41C5-A197-0A79325B1D46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D32EAA9-A1AD-4399-BA9D-06366D067F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D32EAA9-A1AD-4399-BA9D-06366D067F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D32EAA9-A1AD-4399-BA9D-06366D067F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D32EAA9-A1AD-4399-BA9D-06366D067F41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

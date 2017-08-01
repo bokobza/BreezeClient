@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Breeze.TumbleBit.Client;
 using Breeze.TumbleBit.Models;
+using NTumbleBit.ClassicTumbler.Client;
 using Stratis.Bitcoin.Common.JsonErrors;
 
 namespace Breeze.TumbleBit.Controllers
@@ -37,7 +38,7 @@ namespace Breeze.TumbleBit.Controllers
             }
 
             try
-            {
+            {                
                 var tumblerParameters = await this.tumbleBitManager.ConnectToTumblerAsync(request.ServerAddress);
                 return this.Json(tumblerParameters);
             }

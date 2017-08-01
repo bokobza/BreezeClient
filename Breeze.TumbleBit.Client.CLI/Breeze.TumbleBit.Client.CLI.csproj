@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Breeze\Breeze\src\Breeze.Api\Breeze.Api.csproj" />
+    <ProjectReference Include="..\..\Breeze\Breeze\src\Breeze.Wallet\Breeze.Wallet.csproj" />
     <ProjectReference Include="..\Breeze.TumbleBit.Client\Breeze.TumbleBit.Client.csproj" />
   </ItemGroup>
 
